@@ -1,17 +1,14 @@
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
-
-# Xylophone
-
-## Our Goal
-
-The goal of this tutorial is to dive into a simple iOS recipe - how to play sound and use an Apple library called AVFoundation. The most important skill of a great programmer is being able to solve your own problems. We’ll do that by exploring StackOverflow, Apple Documentation and learning how to search for solutions effectively. By learning to use these tools, you’ll be able to start adding custom features to an app and get it to do what you want it to.
 
 
-## What you will create
+# Section 7 - Xylophone App
 
-You will be making your first musical instrument! Music apps are so popular on the App Store that they even get their own category. So in this module, we’re going to make a colourful XyloPhone app. Get it? Ok, the jokes are bad, but remember, I only wrote the good ones... 
+<div style="text-align: center;"><img src="https://github.com/ensonal/iOS-Angela-Challenge/blob/main/Section%207/app%20frame.png?raw=true" width="200" alt="App Frame" /></div>
 
-## What you will learn
+## My Goal
+
+The goal of this tutorial is to dive into a simple iOS recipe - how to play sound and use an Apple library called AVFoundation. The most important skill of a great programmer is being able to solve my own problems. I do that by exploring StackOverflow, Apple Documentation and learning how to search for solutions effectively. By learning to use these tools, I am able to start adding custom features to an app and get it to do what I want it to.
+
+## What I Learned
 
 * How to play sound using AVFoundation and AVAudioPlayer.
 * Understand Apple documentation and how to use StackOverflow.
@@ -30,7 +27,7 @@ You will be making your first musical instrument! Music apps are so popular on t
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+cclass ViewController: UIViewController {
     
     var player: AVAudioPlayer!
 
@@ -39,21 +36,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        playSound()
+        
+        playSound(soundName: sender.currentTitle!)
+        //Reduces the sender's (the button that got pressed) opacity to half.
+          sender.alpha = 0.5
+
+          //Code should execute after 0.2 second delay.
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+              //Bring's sender's opacity back up to fully opaque.
+              sender.alpha = 1.0#imageLiteral(resourceName: "simulator_screenshot_DCA7BDC8-DF64-42BC-A360-CDF00AB5503E.png")
+          }
+        
     }
     
-    func playSound() {
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+    func playSound(soundName : String){
+        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
-                
+        player.play()            
     }
 }
 ```
 
 
 
->This is a companion project to The App Brewery's Complete App Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-![End Banner](Documentation/readme-end-banner.png)
 
