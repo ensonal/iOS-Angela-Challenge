@@ -26,7 +26,7 @@ class ViewController: UIViewController {
           //Code should execute after 0.2 second delay.
           DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
               //Bring's sender's opacity back up to fully opaque.
-              sender.alpha = 1.0
+              sender.alpha = 1.0#imageLiteral(resourceName: "simulator_screenshot_DCA7BDC8-DF64-42BC-A360-CDF00AB
           }
         
     }
